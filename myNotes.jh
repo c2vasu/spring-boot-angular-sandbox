@@ -1,0 +1,5 @@
+entity MyNotesEntry {
+  note String required
+}
+
+paginate MyNotesEntry with pager
