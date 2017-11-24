@@ -37,6 +37,7 @@
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ]
+    ],
+    "herokuAppName": "aqueous-reef-82688"
   }
 }
