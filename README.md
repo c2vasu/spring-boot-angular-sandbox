@@ -69,7 +69,9 @@ To setup this project in Jenkins, use the following configuration:
 
 ## Online Demo
 
-You can find a installed MyNotes web application  here [https://aqueous-reef-82688.herokuapp.com/]
+You can find a installed MyNotes web application  here [https://aqueous-reef-82688.herokuapp.com/][03a06597]
+
+[03a06597]: https://aqueous-reef-82688.herokuapp.com/ "MyNotes Demo"
 
 
 [Gatling]: http://gatling.io/
