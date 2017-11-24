@@ -1,0 +1,14 @@
+version: '2'
+services:
+    mynotes-app:
+        image: mynotes
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://mynotes-postgresql:5432/MyNotes
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    mynotes-postgresql:
+        extends:
+            file: postgresql.yml
+            service: mynotes-postgresql

@@ -1,0 +1,21 @@
+{
+    "myNotesApp": {
+        "myNotesEntry" : {
+            "home": {
+                "title": "My Notes Entries",
+                "createLabel": "Create a new My Notes Entry",
+                "createOrEditLabel": "Create or edit a My Notes Entry"
+            },
+            "created": "A new My Notes Entry is created with identifier {{ param }}",
+            "updated": "A My Notes Entry is updated with identifier {{ param }}",
+            "deleted": "A My Notes Entry is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete My Notes Entry {{ id }}?"
+            },
+            "detail": {
+                "title": "My Notes Entry"
+            },
+            "note": "Note"
+        }
+    }
+}
