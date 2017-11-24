@@ -1,167 +1,72 @@
 # MyNotes
-This application was generated using JHipster 4.10.2, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.10.2](http://www.jhipster.tech/documentation-archive/v4.10.2).
+My Notes is a full stack web application. To create a simple My Notes web application which satisfies following requirements.
 
-## Development
+## Business requirements:
 
-Before you can build this project, you must install and configure the following dependencies on your machine:
-
-1. [Node.js][]: We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-2. [Yarn][]: We use Yarn to manage Node dependencies.
-   Depending on your system, you can install Yarn either from source or as a pre-packaged bundle.
-
-After installing Node, you should be able to run the following command to install development tools.
-You will only need to run this command when dependencies change in [package.json](package.json).
-
-    yarn install
-
-We use yarn scripts and [Webpack][] as our build system.
+1. As a user I need a single page web application which must have an input field to capture and save my text notes.
+2. My notes must be persisted by the application so that the next time when I visit the application page, I must be able to see all my previously saved notes.
+3. As a user, I would like to edit my notes or delete it at any time .
 
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
+## Technical requirements:
 
-    ./gradlew
-    yarn start
+1. Build the app frontend UI on Angular framework
+2. Use Springboot as your backend application framework and database of your choice for data persistence.
+3. Create Restful API’s
+4. Use gradle (preferable) or Maven as a build automation tool
+5. Use Heroku platform to build your modern web application
+6. Use GitHub as your code repository
 
-[Yarn][] is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [package.json](package.json). You can also run `yarn update` and `yarn install` to manage dependencies.
-Add the `help` flag on any command to see how you can use it. For example, `yarn help update`.
+## Technology stack on the client side
 
-The `yarn run` command will list all of the scripts available to run for this project.
+1. Angular 4
+2. Responsive Web Design with Twitter Bootstrap
+3. HTML5 Boilerplate
+4. Sass
+5. Bower
+6. Webpack
 
-### Service workers
+## Technology stack on the server side
 
-Service workers are commented by default, to enable them please uncomment the following code.
+1. Spring Boot 1.5.7.RELEASE
+2. Gradle configuration for building, testing and running the application
+3. Spring Security
+4. Spring MVC REST + Jackson
+5. Spring Data JPA + Bean Validation
+6. H2
 
-* The service worker registering script in index.html
-```
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-        .register('./sw.js')
-        .then(function() { console.log('Service Worker Registered'); });
-    }
-</script>
-```
-* The copy file option in webpack-common.js
-```js
-{ from: './src/main/webapp/sw.js', to: 'sw.js' },
-```
-Note: Add the respective scripts/assets in `sw.js` that is needed to be cached.
+## Technology stack on Testing
 
-### Managing dependencies
+1. Karma
+2. Protractor
+3. Cucumber
+4. Newman
+5. Postman
+6. Swagger
 
-For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
+## Technology stack on Software Engineering
 
-    yarn add --exact leaflet
-
-To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run following command:
-
-    yarn add --dev --exact @types/leaflet
-
-Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-
-Edit [src/main/webapp/app/vendor.ts](src/main/webapp/app/vendor.ts) file:
-~~~
-import 'leaflet/dist/leaflet.js';
-~~~
-
-Edit [src/main/webapp/content/css/vendor.css](src/main/webapp/content/css/vendor.css) file:
-~~~
-@import '~leaflet/dist/leaflet.css';
-~~~
-
-Note: there are still few other things remaining to do for Leaflet that we won't detail here.
-
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
-
-### Using angular-cli
-
-You can also use [Angular CLI][] to generate some custom client code.
-
-For example, the following command:
-
-    ng generate component my-component
-
-will generate few files:
-
-    create src/main/webapp/app/my-component/my-component.component.html
-    create src/main/webapp/app/my-component/my-component.component.ts
-    update src/main/webapp/app/app.module.ts
+1. Docker
+2. Heroku
+3. Vagrant
+4. Jenkins
 
 
-## Building for production
+## Continuous Integration
 
-To optimize the MyNotes application for production, run:
+To setup this project in Jenkins, use the following configuration:
 
-    ./gradlew -Pprod clean bootRepackage
-
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
-
-    java -jar build/libs/*.war
-
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
-Refer to [Using JHipster in production][] for more details.
-
-## Testing
-
-To launch your application's tests, run:
-
-    ./gradlew test
-
-### Client tests
-
-Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
-
-    yarn test
-
-UI end-to-end tests are powered by [Protractor][], which is built on top of WebDriverJS. They're located in [src/test/javascript/e2e](src/test/javascript/e2e)
-and can be run by starting Spring Boot in one terminal (`./gradlew bootRun`) and running the tests (`yarn run e2e`) in a second one.
-### Other tests
-
-Performance tests are run by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
-
-    ./gradlew gatlingRun
-
-For more information, refer to the [Running tests page][].
-
-## Using Docker to simplify development (optional)
-
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
-For example, to start a postgresql database in a docker container, run:
-
-    docker-compose -f src/main/docker/postgresql.yml up -d
-
-To stop it and remove the container, run:
-
-    docker-compose -f src/main/docker/postgresql.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./gradlew bootRepackage -Pprod buildDocker
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.10.2 archive]: http://www.jhipster.tech/documentation-archive/v4.10.2
-
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.10.2/development/
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.10.2/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.10.2/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.10.2/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.10.2/setting-up-ci/
+* Project name: `MyNotes`
+* Source Code Management
+    * Git Repository: `git@github.com:c2vasu/spring-boot-angular-sandbox.git`
+    * Branches to build: `*/master`
+    * Additional Behaviours: `Wipe out repository & force clone`
+* Build Triggers
+    * Poll SCM / Schedule: `H/5 * * * *`
+* Build
+    * Invoke Gradle script / Use Gradle Wrapper / Tasks: `-Pprod clean test bootRepackage`
+* Post-build Actions
+    * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
 
 [Gatling]: http://gatling.io/
 [Node.js]: https://nodejs.org/
