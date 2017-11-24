@@ -1,5 +1,5 @@
 # MyNotes
-My Notes is a full stack web application. To create a simple My Notes web application which satisfies following requirements.
+My Notes is a full stack production ready web application. To create a simple My Notes web application which satisfies following requirements.
 
 ## Business requirements:
 
@@ -15,7 +15,6 @@ My Notes is a full stack web application. To create a simple My Notes web applic
 3. Create Restful API’s
 4. Use gradle (preferable) or Maven as a build automation tool
 5. Use Heroku platform to build your modern web application
-6. Use GitHub as your code repository
 
 ## Technology stack on the client side
 
@@ -67,6 +66,11 @@ To setup this project in Jenkins, use the following configuration:
     * Invoke Gradle script / Use Gradle Wrapper / Tasks: `-Pprod clean test bootRepackage`
 * Post-build Actions
     * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
+
+## Online Demo
+
+You can find a installed MyNotes web application  here [https://aqueous-reef-82688.herokuapp.com/]
+
 
 [Gatling]: http://gatling.io/
 [Node.js]: https://nodejs.org/
